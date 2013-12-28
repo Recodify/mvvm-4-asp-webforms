@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="5663f95a-44a5-4d4c-9f9a-023a80ce035d" name="shiless@FANZ-FAL099329 2011-01-12 15:07:06" runUser="FAL\shiless" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="20e65539-8756-4fda-a223-697f3684f4d4">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\TestResults\shiless_FANZ-FAL099329 2011-01-12 15_07_06">
+      <DeploymentItem filename="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\Binding\bin\Debug\Binding.dll" />
+      <DeploymentItem filename="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\BinderTests\bin\Debug\Rhino.Mocks.dll" />
+      <DeploymentItem filename="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\BinderTests\bin\Debug\ASPBinding.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Error">
+    <Counters total="21" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="21" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="FANZ-FAL099329" outcome="Error" timestamp="2011-01-12T15:07:07.2416034+09:30">
+        <Text>Failed to queue test run 'shiless@FANZ-FAL099329 2011-01-12 15:07:06': Test Run deployment issue: The location of the file or directory 'd:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\Rhino.Mocks.dll' is not trusted.</Text>
+        <Exception>Microsoft.VisualStudio.TestTools.TestManagement.ExecutionException: Test Run deployment issue: The location of the file or directory 'd:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\Rhino.Mocks.dll' is not trusted.
+   at Microsoft.VisualStudio.TestTools.TestManagement.DeploymentManager.DoDeployment(TestRun run, FileCopyService fileCopyService)
+   at Microsoft.VisualStudio.TestTools.TestManagement.ControllerProxy.SetupTestRun(TestRun run, Boolean isNewTestRun, FileCopyService&amp; fileCopyService)
+   at Microsoft.VisualStudio.TestTools.TestManagement.ControllerProxy.QueueTestRunWorker(Object state)</Exception>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <Times creation="2011-01-12T15:07:06.2883747+09:30" queuing="2011-01-12T15:07:06.2883747+09:30" start="2011-01-12T15:07:06.2883747+09:30" finish="2011-01-12T15:07:07.2728568+09:30" />
+  <TestDefinitions>
+    <UnitTest name="ExplicitAuthorityTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="016ef5fd-2cab-5eba-5891-aee888b10369">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseUnbindTests, FrameworkTests" name="ExplicitAuthorityTest" />
+    </UnitTest>
+    <UnitTest name="CollectionTwoWayTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="e676d73e-7761-b947-62de-81a1f4a950fa">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseUnbindTests, FrameworkTests" name="CollectionTwoWayTest" />
+    </UnitTest>
+    <UnitTest name="VerifyTextboxInRepeaterProgrammaticBindReturnsCorrectValue" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="40942389-b82b-418b-0a5c-0a6377319b90">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseBindTests, FrameworkTests" name="VerifyTextboxInRepeaterProgrammaticBindReturnsCorrectValue" />
+    </UnitTest>
+    <UnitTest name="ContextIsConsistentBetweenGetsTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="4e684b37-0405-d140-9865-f8fc3ca26985">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.ContextRetrievalTests, FrameworkTests" name="ContextIsConsistentBetweenGetsTest" />
+    </UnitTest>
+    <UnitTest name="VerifyTextboxTextProgrammaticBindCreatesCorrectBindingObject" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="fedc116c-552f-c977-989e-8545d6a52623">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseBindTests, FrameworkTests" name="VerifyTextboxTextProgrammaticBindCreatesCorrectBindingObject" />
+    </UnitTest>
+    <UnitTest name="DefaultAuthorityIsLastBindingTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="7ddd65ff-b5d5-b573-027b-c8a8bc9db9f2">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseUnbindTests, FrameworkTests" name="DefaultAuthorityIsLastBindingTest" />
+    </UnitTest>
+    <UnitTest name="IndexedPathSourceResolutionTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="99fb07f7-55bf-f7e4-7a96-48e36a5c2ad7">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="IndexedPathSourceResolutionTest" />
+    </UnitTest>
+    <UnitTest name="NestedCollectionRelativePathTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="bf4bd52d-ee45-124b-ffdc-23ceefc77bc4">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="NestedCollectionRelativePathTest" />
+    </UnitTest>
+    <UnitTest name="VerifyTextboxTextProgrammaticBindReturnsCorrectValue" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="b93cf5e8-cb14-8165-6d00-dc6c238d51e6">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseBindTests, FrameworkTests" name="VerifyTextboxTextProgrammaticBindReturnsCorrectValue" />
+    </UnitTest>
+    <UnitTest name="NestedAbsolutePathTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="efbb38b3-e1cb-c476-63a6-499bcb1a2414">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="NestedAbsolutePathTest" />
+    </UnitTest>
+    <UnitTest name="CollectionOneWayTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="ebdb73ed-ade3-2a15-763a-2451dfefc938">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseUnbindTests, FrameworkTests" name="CollectionOneWayTest" />
+    </UnitTest>
+    <UnitTest name="TextBoxOneWayUnbindTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="8a58399e-adf6-e999-fc46-77c857cf1911">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseUnbindTests, FrameworkTests" name="TextBoxOneWayUnbindTest" />
+    </UnitTest>
+    <UnitTest name="SimplePathStorageTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="956f849c-4cd1-2d9a-3aed-76e30d8ae2c5">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="SimplePathStorageTest" />
+    </UnitTest>
+    <UnitTest name="NestedRelativePathTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="827503b3-8da4-a818-ae95-4fa970a521a7">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="NestedRelativePathTest" />
+    </UnitTest>
+    <UnitTest name="SimplePathTargetResolutionTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="55b85cba-cdc6-fb80-a2c3-de9ed863ea72">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="SimplePathTargetResolutionTest" />
+    </UnitTest>
+    <UnitTest name="TextBoxUnbindTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="2e081084-c722-441f-888e-acc572e80418">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseUnbindTests, FrameworkTests" name="TextBoxUnbindTest" />
+    </UnitTest>
+    <UnitTest name="VerifyRepeaterProgrammaticBindCreatesCorrectBindingObject" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="2457011b-8c55-eda8-6d9f-8811db06fd90">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseBindTests, FrameworkTests" name="VerifyRepeaterProgrammaticBindCreatesCorrectBindingObject" />
+    </UnitTest>
+    <UnitTest name="NestedCollectionAbsolutePathTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="fcd3a7c5-f580-aa2b-ddb9-82096a75d787">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="NestedCollectionAbsolutePathTest" />
+    </UnitTest>
+    <UnitTest name="SimplePathSourceResolutionTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="1f3f1fc1-124e-3cd3-47c8-1e2b20c95bb6">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="SimplePathSourceResolutionTest" />
+    </UnitTest>
+    <UnitTest name="ExplicitAuthorityLastAuthorativeFlagWinsTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="78a13f87-a080-5648-2cf3-6293bde6ec22">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BinderBaseUnbindTests, FrameworkTests" name="ExplicitAuthorityLastAuthorativeFlagWinsTest" />
+    </UnitTest>
+    <UnitTest name="IndexedPathStorageTest" storage="d:\documents and settings\shiless\my documents\binding framework\bindingframework\frameworktests\bin\debug\frameworktests.dll" id="58ee54d4-a195-3843-b6a7-6bb64ef8831f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="D:\Documents and Settings\shiless\My Documents\Binding Framework\BindingFramework\FrameworkTests\bin\Debug\FrameworkTests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BinderTests.BindingPathTests, FrameworkTests" name="IndexedPathStorageTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2457011b-8c55-eda8-6d9f-8811db06fd90" executionId="9f04702f-04bf-4fca-a752-7b6ff7ec8d7a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fedc116c-552f-c977-989e-8545d6a52623" executionId="c710f30e-cfa5-4a2f-89fb-14a717053f41" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b93cf5e8-cb14-8165-6d00-dc6c238d51e6" executionId="e0ed9f5a-46eb-4d79-82f8-399f452cb4e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="40942389-b82b-418b-0a5c-0a6377319b90" executionId="c25935c4-2fbf-4843-bb14-e4398281addf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e081084-c722-441f-888e-acc572e80418" executionId="dd952bb5-521b-4812-873f-14d13d476c43" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8a58399e-adf6-e999-fc46-77c857cf1911" executionId="26cc3ca6-35f6-48b9-8d1b-6d1985c2d3e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ddd65ff-b5d5-b573-027b-c8a8bc9db9f2" executionId="6de952ad-9cd0-495a-91db-ce50f70de541" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="016ef5fd-2cab-5eba-5891-aee888b10369" executionId="38b1d771-f8db-4f92-b7ba-0b12df481a07" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78a13f87-a080-5648-2cf3-6293bde6ec22" executionId="6a5ff460-243c-4ab7-9aa5-fd51de2241e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e676d73e-7761-b947-62de-81a1f4a950fa" executionId="5f7a3d52-0d77-423b-9f79-bacbec22b5f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ebdb73ed-ade3-2a15-763a-2451dfefc938" executionId="25ac69a1-017f-4fc7-af00-b53914f0964b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="956f849c-4cd1-2d9a-3aed-76e30d8ae2c5" executionId="e1e0a82c-81e4-44fd-9aa4-5920465e08dd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1f3f1fc1-124e-3cd3-47c8-1e2b20c95bb6" executionId="39f0b52b-42d0-4c1c-8e55-f1c1c1176eeb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="58ee54d4-a195-3843-b6a7-6bb64ef8831f" executionId="9a71ee1e-eba6-47e7-a871-4da065c1a000" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="99fb07f7-55bf-f7e4-7a96-48e36a5c2ad7" executionId="8e9ddbea-b2cb-43d4-b059-c8ad3054139a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="55b85cba-cdc6-fb80-a2c3-de9ed863ea72" executionId="e027ece1-2ecf-431c-b442-106d36e4787e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="827503b3-8da4-a818-ae95-4fa970a521a7" executionId="a4ceec0d-3c3a-40d3-8c69-d219e9c0adfc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bf4bd52d-ee45-124b-ffdc-23ceefc77bc4" executionId="192d1245-1065-4af9-a625-e8a0070f42f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="efbb38b3-e1cb-c476-63a6-499bcb1a2414" executionId="2711cea7-3b01-4622-9c96-97f9848322f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fcd3a7c5-f580-aa2b-ddb9-82096a75d787" executionId="69992349-8273-4183-9bf1-1b1a319ccd5c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e684b37-0405-d140-9865-f8fc3ca26985" executionId="427789be-d738-45b3-8dee-2a42c8235794" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9f04702f-04bf-4fca-a752-7b6ff7ec8d7a" testId="2457011b-8c55-eda8-6d9f-8811db06fd90" testName="VerifyRepeaterProgrammaticBindCreatesCorrectBindingObject" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="c710f30e-cfa5-4a2f-89fb-14a717053f41" testId="fedc116c-552f-c977-989e-8545d6a52623" testName="VerifyTextboxTextProgrammaticBindCreatesCorrectBindingObject" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="e0ed9f5a-46eb-4d79-82f8-399f452cb4e9" testId="b93cf5e8-cb14-8165-6d00-dc6c238d51e6" testName="VerifyTextboxTextProgrammaticBindReturnsCorrectValue" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="c25935c4-2fbf-4843-bb14-e4398281addf" testId="40942389-b82b-418b-0a5c-0a6377319b90" testName="VerifyTextboxInRepeaterProgrammaticBindReturnsCorrectValue" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="dd952bb5-521b-4812-873f-14d13d476c43" testId="2e081084-c722-441f-888e-acc572e80418" testName="TextBoxUnbindTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="26cc3ca6-35f6-48b9-8d1b-6d1985c2d3e0" testId="8a58399e-adf6-e999-fc46-77c857cf1911" testName="TextBoxOneWayUnbindTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="6de952ad-9cd0-495a-91db-ce50f70de541" testId="7ddd65ff-b5d5-b573-027b-c8a8bc9db9f2" testName="DefaultAuthorityIsLastBindingTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="38b1d771-f8db-4f92-b7ba-0b12df481a07" testId="016ef5fd-2cab-5eba-5891-aee888b10369" testName="ExplicitAuthorityTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="6a5ff460-243c-4ab7-9aa5-fd51de2241e5" testId="78a13f87-a080-5648-2cf3-6293bde6ec22" testName="ExplicitAuthorityLastAuthorativeFlagWinsTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="5f7a3d52-0d77-423b-9f79-bacbec22b5f9" testId="e676d73e-7761-b947-62de-81a1f4a950fa" testName="CollectionTwoWayTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="25ac69a1-017f-4fc7-af00-b53914f0964b" testId="ebdb73ed-ade3-2a15-763a-2451dfefc938" testName="CollectionOneWayTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="e1e0a82c-81e4-44fd-9aa4-5920465e08dd" testId="956f849c-4cd1-2d9a-3aed-76e30d8ae2c5" testName="SimplePathStorageTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="39f0b52b-42d0-4c1c-8e55-f1c1c1176eeb" testId="1f3f1fc1-124e-3cd3-47c8-1e2b20c95bb6" testName="SimplePathSourceResolutionTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="9a71ee1e-eba6-47e7-a871-4da065c1a000" testId="58ee54d4-a195-3843-b6a7-6bb64ef8831f" testName="IndexedPathStorageTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="8e9ddbea-b2cb-43d4-b059-c8ad3054139a" testId="99fb07f7-55bf-f7e4-7a96-48e36a5c2ad7" testName="IndexedPathSourceResolutionTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="e027ece1-2ecf-431c-b442-106d36e4787e" testId="55b85cba-cdc6-fb80-a2c3-de9ed863ea72" testName="SimplePathTargetResolutionTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="a4ceec0d-3c3a-40d3-8c69-d219e9c0adfc" testId="827503b3-8da4-a818-ae95-4fa970a521a7" testName="NestedRelativePathTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="192d1245-1065-4af9-a625-e8a0070f42f2" testId="bf4bd52d-ee45-124b-ffdc-23ceefc77bc4" testName="NestedCollectionRelativePathTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="2711cea7-3b01-4622-9c96-97f9848322f3" testId="efbb38b3-e1cb-c476-63a6-499bcb1a2414" testName="NestedAbsolutePathTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="69992349-8273-4183-9bf1-1b1a319ccd5c" testId="fcd3a7c5-f580-aa2b-ddb9-82096a75d787" testName="NestedCollectionAbsolutePathTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="427789be-d738-45b3-8dee-2a42c8235794" testId="4e684b37-0405-d140-9865-f8fc3ca26985" testName="ContextIsConsistentBetweenGetsTest" computerName="FANZ-FAL099329" duration="00:00:00" startTime="0001-01-01T09:30:00.0000000+09:30" endTime="0001-01-01T09:30:00.0000000+09:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,125 @@
+﻿body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+	margin: 10px;
+	padding: 0;
+	font-size: 80%;
+	background-color: #FFDFC4;
+	color: #666666;
+}
+
+input
+{
+    padding: 2px;
+    margin: 10px;
+}
+
+fieldset
+{
+    margin: 10px;
+    width: 80%;
+    padding: 10px;
+    background-color: white;
+}
+
+legend
+{
+    font-size: 120%;
+}
+
+table
+ {
+	
+	border: solid 1px #004F5D;
+	background:white;
+ }
+
+ th {
+	padding: 0 0.5em;
+	text-align: left;
+	}
+
+ tr.headerRow th {
+	
+	border-bottom: 1px solid #FB7A31;
+	background: #FFC;
+	}
+
+ td {
+	border-bottom: 1px solid #CCC;
+	padding: 0 0.5em;
+	}
+
+ td:first-child {
+	width: 190px;
+	}
+
+ td+td {
+	border-left: 1px solid #CCC;
+	text-align: left;
+	}
+	
+ #totalRow td,  #totalRow th  {
+    border-left: 1px solid #CCC;
+    text-align: left;
+    font-weight:bold;
+    border-top: 1px solid #CCC;
+}
+
+fieldset ol
+{
+  margin: 0;
+  padding: 0;
+}
+
+li label
+{
+   line-height: 1.8;
+   vertical-align: middle;
+   width:155px;
+   display:inline-block;
+}
+
+
+fieldset ol li
+{
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+fieldset ul li
+{
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+input + label
+{
+     border: solid 1px white;
+}
+input:focus + label
+{
+     border: dotted 1px #999999;
+}
+
+fieldset fieldset
+{
+    border: solid 0px Black;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+fieldset fieldset legend {
+  padding: 0 0 5px;
+  font-weight: normal;
+  /*position: absolute; top: -999px; width: 0px; */
+  
+}
+
+fieldset fieldset label {
+  display: block;
+  width: auto;
+}
