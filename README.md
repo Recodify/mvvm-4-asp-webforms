@@ -122,10 +122,6 @@ namespace Barebones
 &lt;/html&gt;
 --&gt;</pre>
 
-<p>We're now ready to run the example. Doing so will result in the following:</p>
-
-<p><img width="449" height="197" alt="a screenshot of the simple example running" src="WPFDataBindingInASPX/simpleExampleScreen.jpg" complete="true" /></p>
-
 <p>To test the above, I suggest adding a <code>Page_PreRender</code> handler to your code-behind and setting a breakpoint. Also place a breakpoint in the <code>Execute</code> method of the <code>ClickCommand</code>. Modify the values of the textboxes and click Submit. First the breakpoint in the <code>Execute</code> method will be hit, next the <code>Page_PreRender</code> one. Examine the <code>DataContext</code> property (ViewModel) to see the unbound values from the textboxes. Using <code>Page_PreRender</code> in this manner is the recommended approach for ViewModel/DataContext verification with all supplied examples as by this point in the PLC, everything bind-y should have run.</p>
 
 <p>Something that is worth explaining, which some of you will be scratching your heads over: <code>sender.Bind(&quot;...&quot;)</code> and <code>sender.BindC(&quot;...&quot;)</code>.</p>
@@ -544,7 +540,7 @@ public event PropertyChangedEventHandler PropertyChanged;</pre>
 
 <h2>How Far Along Are We?</h2>
 
-<p>I'd like to stress that the code supplied isn't a finished product. It's probably a version 0.3 at most, but I've got to the stage where before I invest any more time I feel it would be useful to generate some feedback. Maybe (although I hope not) I'm totally missing the point and there's a reason why this approach hasn't been tried (or shared) before. Perhaps there are things you don't like, some things you do. <strong>Let me know!</strong></p>
+<p> It's probably a version 0.3 at most, but I've got to the stage where before I invest any more time I feel it would be useful to generate some feedback. Maybe (although I hope not) I'm totally missing the point and there's a reason why this approach hasn't been tried (or shared) before. Perhaps there are things you don't like, some things you do. <strong>Let me know!</strong></p>
 
 <p>In addition to the features listed in <strong>...and some that didn't</strong>, there are a number of areas that require further development:</p>
 
@@ -552,8 +548,6 @@ public event PropertyChangedEventHandler PropertyChanged;</pre>
 <li>The performance could be better, it's not telling currently, but once scaled, might be. I am aware of quite a few areas where performance of the framework could be improved.</li>
 
 <li>There is currently a limitation when binding programmatically, which really is best demonstrated by example. There is a test which demonstrates the issue in the test suite: <code>NestedCollectionRelativePathTest</code>.</li>
-
-<li>The test coverage of the framework needs to be expanded significantly.</li>
 
 <li>Error handling needs improving as well, the design goal of: bindings not throwing exceptions under any circumstances, hasn't been implemented, but my excuse is that with exceptions, the code is easier to debug whilst the framework is still in a development stage....although this could be (and probably is) a cop out.</li>
 </ul>
