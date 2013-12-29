@@ -1,226 +1,6 @@
-<h2>Introduction</h2>
+<h2>Simple Example</h2>
 
-<p>From the very outset, two-way databinding support in ASP.NET Web Forms has been poor. Over time, a number of solutions have evolved (keep reading to find out about some of these). Unfortunately, all of them have had significant limitations or have only worked when utilised in a proscribed manner.</p>
-
-<p>Anyone moving from a Silverlight or WPF project to Web Forms will find themselves having to re-adjust their thinking somewhat from a stateful world to a stateless one. This transition forces a number of concessions, one of the most glaring of which is this absence of a rich and flexible two-way databinding model as supplied by the former frameworks. The powerful data binding support supplied by WPF also compliments using the MVVM pattern to such a degree that the combination of Databinding + MVVM has become the de facto pattern used to develop UI applications with WPF and Silverlight. Many people will agree that the inability to use this pattern when designing Web Forms pages feels like a real step backwards after spending anytime with WPF or Silverlight.</p>
-
-<p>The aim of the proposed framework is to address the lack of flexible and powerful two-way data binding in ASP.NET Web Forms by allowing for a WPF-esque declarative syntax to be used which at the same time allows UI development using the MVVM pattern.</p>
-
-<p>Please be aware that throughout this article the term &quot;bind&quot; is used to describe the action of displaying data from ViewModel/source on the screen. The term &quot;unbind&quot; is used to describe the reverse of this process: extracting the user input data from the control and mapping it back to the ViewModel.</p>
-
-<h2>Background</h2>
-
-<h3>References/Concepts</h3>
-
-<p>Some of the concepts I have assumed you are familiar with:</p>
-
-<ul>
-<li><a href="http://www.codeproject.com/KB/WPF/BeginWPF5.aspx">WPF Data Binding</a></li>
-
-<li><a href="http://msdn.microsoft.com/en-us/magazine/dd419663.aspx">MVVM</a></li>
-
-<li><a href="http://www.codeproject.com/KB/silverlight/mvvm-explained.aspx">More MVVM</a><a></a><a> </a></li>
-
-<li><a></a><a href="Mastering_DataBinding.aspx">Mastering ASP.NET DataBinding</a></li>
-
-<li><a href="http://blogs.imeta.co.uk/jyoung/archive/2010/04/06/848.aspx">INotifyPropertyChanged</a></li>
-
-<li><a href="http://msdn.microsoft.com/en-us/library/system.windows.input.icommand.aspx">ICommand</a></li>
-
-<li><a href="http://consultingblogs.emc.com/dariuscollins/archive/2009/11/23/using-delegate-commands-with-wpf-views.aspx">DelegateCommand</a></li>
-</ul>
-
-<h3>Current Solutions</h3>
-
-<table class="ArticleTable">
-<thead>
-<tr>
-<th>Solution</th>
-
-<th>Main Drawback</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><a href="http://msdn.microsoft.com/en-us/magazine/cc163505.aspx">Subclass all controls</a></td>
-
-<td>You have to subclass every control which needs to support two-way binding!</td>
-</tr>
-
-<tr>
-<td><a href="http://davidhayden.com/blog/dave/archive/2005/05/25/1051.aspx">Data Source controls and GridView, FormView, DetailsView</a></td>
-
-<td>You're limited to using the listed controls. Factory methods/CRUD methods and parameter mappings required.</td>
-</tr>
-
-<tr>
-<td><a href="manubindingmanager.aspx">Use Visual Studio Designer to create bindings at design time</a></td>
-
-<td>No runtime support. You must use the Visual Studio designers.</td>
-</tr>
-
-<tr>
-<td><a href="http://www.nesterovsky-bros.com/weblog/CategoryView,category,ASPNET.aspx">Extender Controls for each binding</a></td>
-
-<td>Each binding requires a binding extension control which can lead to bloated ASPX files.</td>
-</tr>
-
-<tr>
-<td><a href="ASPNetTwoWayDataBinding.aspx">Parsing ASP.NET source files at runtime</a></td>
-
-<td>Limited when binding across MasterPages/ContentPages and UserControls as you are reading the source from the file system.</td>
-</tr>
-
-<tr>
-<td><a href="http://www.sourcebank.com/DevX/Article/35058">Binding Manager</a></td>
-
-<td>No inline (ASPX) declarative binding.</td>
-</tr>
-
-<tr>
-<td><a href="http://www.sourcebank.com/DevX/Article/35058">By hand</a></td>
-
-<td>Labour intensive, verbose, accident prone, poor maintainability, code bloat.</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>N.B.</strong> The above list of solutions for providing Web Forms with two-way data binding support is by no means exhaustive, but I do feel that it covers some of the more common methods used.</p>
-
-<p>You may decide you prefer one of the above options to the proposed framework. I've listed them for this very reason, different scenarios call for different solutions and it pays to be aware of what's around. All of the above will work fine and will fit into various architectural designs, but I feel that the proposed framework offers some benefits. I hope that by explaining the approach I have taken with this framework, I will convince you of the same. If you feel that a deeper examination of the available two-way databinding methods would be of benefit, then please leave a comment and I will consider expanding on the merits and drawbacks of the methods listed above, but I do feel confident that if you've spent time doing databinding the WPF way, then you'll immediately understand how the approach I've taken can be of benefit.</p>
-
-<h2>Design Tenants</h2>
-
-<p>The following are a list of ideals which I have tried to adhere to whilst developing this framework:</p>
-
-<ul>
-<li>No page base class - In order to allow easy integration of this framework with existing frameworks, a number of which require you to inherit your Pages from a base class, it was decided that we would not require this.</li>
-
-<li>Minimise wire-up code - A key goal was to keep the amount of wiring required to a minimum. Taken hand-in-hand with the &quot;no page base class&quot; goal, this required careful design and implementation.</li>
-
-<li>Minimise code-behind - Eliminate, as much as possible, the need for any code-behind. The ability to implement the UI entirely declaratively was a key goal.</li>
-
-<li>Facilitate MVVM in ASP.NET - Full support for command binding and two-way databinding.</li>
-
-<li>Mimic WPF - Allow the use of WPF binding features such as <code>IValueConverter</code>s, Binding Modes, Resources, and expressive, declarative binding statements.</li>
-
-<li>Suppress Exceptions - As with WPF, databinding errors should not cause your application to throw an Exception (partialy realised, see: &quot;How far along are we?&quot;).</li>
-</ul>
-
-<h2>Features That Made It...</h2>
-
-<ul>
-<li>One-way and two-way data binding</li>
-
-<li>Tiny amounts of integration code</li>
-
-<li><code>IValueConverter</code> support</li>
-
-<li>Implicit and explicit precedence - If you bind multiple controls to a single source, you can control which control &quot;Wins&quot;/&quot;IsAuthorative&quot; on unbind</li>
-
-<li>Global binding resources - Allow one binding declaration to be used across multiple controls</li>
-
-<li>Stateful and stateless binding - Choose to persist the ViewModel in the View State between postbacks, or recreate it each time</li>
-
-<li>Cascading updates (see section with same title for more information)</li>
-
-<li>Automatic or explicit unbind - Choose to have the framework automatically unbind on each post back, or manually initiate the unbind operation when required</li>
-
-<li>Fully unit testable - Dependency Injection/Inversion of Control utilised to allow easy mocking</li>
-
-<li>Support deep binding paths - Will happily traverse and bind to child properties (no limit to the size of the object graphs)</li>
-
-<li>Full support for declarative binding</li>
-
-<li>Partial support for programmatic binding</li>
-
-<li>No base classes required - Allows easy integration with existing frameworks</li>
-
-<li>Full support for static or dynamic binding - Use predefined data bindings or generate them based on application flow/data flow</li>
-
-<li>Relative or absolute binding paths - Bind &quot;out of context&quot; using absolute binding expressions or as part of a nested hierarchy using relative binding paths</li>
-
-<li>Works entirely in nested scenarios - Data contexts are inherited from the page or parent binding</li>
-</ul>
-
-<h2>...and Some That Didn't</h2>
-
-<ul>
-<li>Property coercion</li>
-
-<li>Built-in validation</li>
-
-<li>Cascading updates without <code>INotifyPropertyChanged</code> - possible as we <strong>know</strong> when values have changed</li>
-
-<li>UI Element binding - The ability to bind to the properties of other controls (ala WPF)</li>
-
-<li>Ancestor binding - The ability to bind to Ancestors of a certain type</li>
-
-<li>Custom View State serializer - avoid the need for <code>[field: NonSerialized]</code> when using <code>INotifyPropertyChanged</code></li>
-
-<li>Support for <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx"><code>IDataErrorInfo</code></a></li>
-
-<li>The ability to have multiple models/contexts - Utilise multiple View Models/data contexts via a dictionary based view data context collection</li>
-</ul>
-
-<h2>Using the Code</h2>
-
-<h3>Solution Overview</h3>
-
-<table class="ArticleTable">
-<thead>
-<tr>
-<th>Project</th>
-
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Framework/Binding</td>
-
-<td>This is the core framework assembly. It contains all the essential non-platform specific framework components.</td>
-</tr>
-
-<tr>
-<td>Framework/ASPBinding</td>
-
-<td>ASP.NET specific framework components.</td>
-</tr>
-
-<tr>
-<td>FrameworkTests</td>
-
-<td>Unit tests.</td>
-</tr>
-
-<tr>
-<td>DomainModel</td>
-
-<td>Business objects used by the examples and demos.</td>
-</tr>
-
-<tr>
-<td>BindingExamples</td>
-
-<td>Example and demo library - this contains a fair number of simple and more advanced examples, and should be considered the main reference for further exploration of this framework.</td>
-</tr>
-
-<tr>
-<td>Barebones</td>
-
-<td>The bare-minimum &quot;hello world&quot; example of using this framework.</td>
-</tr>
-</tbody>
-</table>
-
-<h3>Simple Example</h3>
-
-<p>I feel the best way to get started with an introduction to the code is with a simple example. I will cover the steps required to replicate the <em>BareBones/BindingExample.aspx</em> page and supporting classes.</p>
-
-<p>The best place to start is with the creation of the ViewModel. Anyone who has spent time working with MVVM will appreciate that this is one of the most rewarding parts about working with the pattern - it encourages a measured, data/action-centric approach when developing new UI.</p>
+<p>The best place to start is with the creation of a ViewModel.</p>
 
 <pre lang="cs">[Serializable]
 public class ViewModel
@@ -378,6 +158,62 @@ public static object Bind(this object control, string sourcePath)
 <p>So what we're doing with <code>sender.Bind</code> is simply calling an extension method of <code>System.Object</code>.</p>
 
 <p>This is, of course, a very simple example, but I hope it demonstrates the ease with which the supplied framework can be harnessed. Please refer to the <em>BindingExamples</em> project (and its menu - <em>MainMenu.aspx</em>) for further examples applicable to a number of disparate scenarios and for a demonstration of the features available for you to use.</p>
+
+<h2>Features So Far...</h2>
+
+<ul>
+<li>One-way and two-way data binding</li>
+
+<li>Tiny amounts of integration code</li>
+
+<li><code>IValueConverter</code> support</li>
+
+<li>Implicit and explicit precedence - If you bind multiple controls to a single source, you can control which control &quot;Wins&quot;/&quot;IsAuthorative&quot; on unbind</li>
+
+<li>Global binding resources - Allow one binding declaration to be used across multiple controls</li>
+
+<li>Stateful and stateless binding - Choose to persist the ViewModel in the View State between postbacks, or recreate it each time</li>
+
+<li>Cascading updates (see section with same title for more information)</li>
+
+<li>Automatic or explicit unbind - Choose to have the framework automatically unbind on each post back, or manually initiate the unbind operation when required</li>
+
+<li>Fully unit testable - Dependency Injection/Inversion of Control utilised to allow easy mocking</li>
+
+<li>Support deep binding paths - Will happily traverse and bind to child properties (no limit to the size of the object graphs)</li>
+
+<li>Full support for declarative binding</li>
+
+<li>Partial support for programmatic binding</li>
+
+<li>No base classes required - Allows easy integration with existing frameworks</li>
+
+<li>Full support for static or dynamic binding - Use predefined data bindings or generate them based on application flow/data flow</li>
+
+<li>Relative or absolute binding paths - Bind &quot;out of context&quot; using absolute binding expressions or as part of a nested hierarchy using relative binding paths</li>
+
+<li>Works entirely in nested scenarios - Data contexts are inherited from the page or parent binding</li>
+</ul>
+
+<h2>...and Some Yet to Come</h2>
+
+<ul>
+<li>Property coercion</li>
+
+<li>Built-in validation</li>
+
+<li>Cascading updates without <code>INotifyPropertyChanged</code> - possible as we <strong>know</strong> when values have changed</li>
+
+<li>UI Element binding - The ability to bind to the properties of other controls (ala WPF)</li>
+
+<li>Ancestor binding - The ability to bind to Ancestors of a certain type</li>
+
+<li>Custom View State serializer - avoid the need for <code>[field: NonSerialized]</code> when using <code>INotifyPropertyChanged</code></li>
+
+<li>Support for <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx"><code>IDataErrorInfo</code></a></li>
+
+<li>The ability to have multiple models/contexts - Utilise multiple View Models/data contexts via a dictionary based view data context collection</li>
+</ul>
 
 <h3>Exploring the Syntax</h3>
 
@@ -543,6 +379,164 @@ public event PropertyChangedEventHandler PropertyChanged;</pre>
 <p>This method is different to the mechanism used by stateful environments like Silverlight and WPF which have the luxury of being able to map back to the same object from which the data was initially retrieved and as such can rely on object equality, the ideal scenario. Due to the stateless nature of the web, we do not have this option in ASP.NET and so we must store a path (including the indexers if binding to collections) so that we may traverse this path at unbind time in order to ascertain where to write back the value retrieved from the View. This method, whilst effective, does introduce a responsibility which must be appreciated in order to avoid data corruption in the ViewModel. It is important that no changes are made directly to the ViewModel on a postback <em>before</em> the unbind is initiated. If changes are made to the ViewModel, say setting the value of a property, this value will be overwritten when you unbind. More importantly still, ensure that any collections are presented in the same order and contain the same number of items as they did when the initial bind took place. If you modified the ViewModel so that a collection contains less items then at initial bind, you are likely to receive <em>index out of range</em> exceptions. If the items are in a different order, then you may end up with corrupt and invalid data as values are mapped back on to the incorrect objects.</p>
 
 <p>This caveat emptor applies to both <code>Persist</code> (stateful) and <code>Recreate</code> (stateless) state modes, but there is a greater risk with stateless binding as the responsibility for recreation of the ViewModel is placed in the hands of the page designer, whereas with stateful binding, some of this responsibility is assumed by the binder framework as it serializes the ViewModel to View State and deserializes it into an object on each post back. Although many will feel that stateful binding is not worth the sacrifice due to View State size considerations and risk of concurrency issues (in a lot of situations, I would agree), it does minimise exposure to the potential issues described here.</p>
+
+<h2>Background</h2>
+
+<p>From the very outset, two-way databinding support in ASP.NET Web Forms has been poor. Over time, a number of solutions have evolved (keep reading to find out about some of these). Unfortunately, all of them have had significant limitations or have only worked when utilised in a proscribed manner.</p>
+
+<p>Anyone moving from a Silverlight or WPF project to Web Forms will find themselves having to re-adjust their thinking somewhat from a stateful world to a stateless one. This transition forces a number of concessions, one of the most glaring of which is this absence of a rich and flexible two-way databinding model as supplied by the former frameworks. The powerful data binding support supplied by WPF also compliments using the MVVM pattern to such a degree that the combination of Databinding + MVVM has become the de facto pattern used to develop UI applications with WPF and Silverlight. Many people will agree that the inability to use this pattern when designing Web Forms pages feels like a real step backwards after spending anytime with WPF or Silverlight.</p>
+
+<p>The aim of the proposed framework is to address the lack of flexible and powerful two-way data binding in ASP.NET Web Forms by allowing for a WPF-esque declarative syntax to be used which at the same time allows UI development using the MVVM pattern.</p>
+
+<p>Please be aware that throughout this article the term &quot;bind&quot; is used to describe the action of displaying data from ViewModel/source on the screen. The term &quot;unbind&quot; is used to describe the reverse of this process: extracting the user input data from the control and mapping it back to the ViewModel.</p>
+
+<h3>References/Concepts</h3>
+
+<p>Some of the concepts I have assumed you are familiar with:</p>
+
+<ul>
+<li><a href="http://www.codeproject.com/KB/WPF/BeginWPF5.aspx">WPF Data Binding</a></li>
+
+<li><a href="http://msdn.microsoft.com/en-us/magazine/dd419663.aspx">MVVM</a></li>
+
+<li><a href="http://www.codeproject.com/KB/silverlight/mvvm-explained.aspx">More MVVM</a><a></a><a> </a></li>
+
+<li><a></a><a href="Mastering_DataBinding.aspx">Mastering ASP.NET DataBinding</a></li>
+
+<li><a href="http://blogs.imeta.co.uk/jyoung/archive/2010/04/06/848.aspx">INotifyPropertyChanged</a></li>
+
+<li><a href="http://msdn.microsoft.com/en-us/library/system.windows.input.icommand.aspx">ICommand</a></li>
+
+<li><a href="http://consultingblogs.emc.com/dariuscollins/archive/2009/11/23/using-delegate-commands-with-wpf-views.aspx">DelegateCommand</a></li>
+</ul>
+
+<h3>Current Solutions</h3>
+
+<table class="ArticleTable">
+<thead>
+<tr>
+<th>Solution</th>
+
+<th>Main Drawback</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="http://msdn.microsoft.com/en-us/magazine/cc163505.aspx">Subclass all controls</a></td>
+
+<td>You have to subclass every control which needs to support two-way binding!</td>
+</tr>
+
+<tr>
+<td><a href="http://davidhayden.com/blog/dave/archive/2005/05/25/1051.aspx">Data Source controls and GridView, FormView, DetailsView</a></td>
+
+<td>You're limited to using the listed controls. Factory methods/CRUD methods and parameter mappings required.</td>
+</tr>
+
+<tr>
+<td><a href="manubindingmanager.aspx">Use Visual Studio Designer to create bindings at design time</a></td>
+
+<td>No runtime support. You must use the Visual Studio designers.</td>
+</tr>
+
+<tr>
+<td><a href="http://www.nesterovsky-bros.com/weblog/CategoryView,category,ASPNET.aspx">Extender Controls for each binding</a></td>
+
+<td>Each binding requires a binding extension control which can lead to bloated ASPX files.</td>
+</tr>
+
+<tr>
+<td><a href="ASPNetTwoWayDataBinding.aspx">Parsing ASP.NET source files at runtime</a></td>
+
+<td>Limited when binding across MasterPages/ContentPages and UserControls as you are reading the source from the file system.</td>
+</tr>
+
+<tr>
+<td><a href="http://www.sourcebank.com/DevX/Article/35058">Binding Manager</a></td>
+
+<td>No inline (ASPX) declarative binding.</td>
+</tr>
+
+<tr>
+<td><a href="http://www.sourcebank.com/DevX/Article/35058">By hand</a></td>
+
+<td>Labour intensive, verbose, accident prone, poor maintainability, code bloat.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>N.B.</strong> The above list of solutions for providing Web Forms with two-way data binding support is by no means exhaustive, but I do feel that it covers some of the more common methods used.</p>
+
+<p>You may decide you prefer one of the above options to the proposed framework. I've listed them for this very reason, different scenarios call for different solutions and it pays to be aware of what's around. All of the above will work fine and will fit into various architectural designs, but I feel that the proposed framework offers some benefits. I hope that by explaining the approach I have taken with this framework, I will convince you of the same. If you feel that a deeper examination of the available two-way databinding methods would be of benefit, then please leave a comment and I will consider expanding on the merits and drawbacks of the methods listed above, but I do feel confident that if you've spent time doing databinding the WPF way, then you'll immediately understand how the approach I've taken can be of benefit.</p>
+
+<h2>Design Tenants</h2>
+
+<p>The following are a list of ideals which I have tried to adhere to whilst developing this framework:</p>
+
+<ul>
+<li>No page base class - In order to allow easy integration of this framework with existing frameworks, a number of which require you to inherit your Pages from a base class, it was decided that we would not require this.</li>
+
+<li>Minimise wire-up code - A key goal was to keep the amount of wiring required to a minimum. Taken hand-in-hand with the &quot;no page base class&quot; goal, this required careful design and implementation.</li>
+
+<li>Minimise code-behind - Eliminate, as much as possible, the need for any code-behind. The ability to implement the UI entirely declaratively was a key goal.</li>
+
+<li>Facilitate MVVM in ASP.NET - Full support for command binding and two-way databinding.</li>
+
+<li>Mimic WPF - Allow the use of WPF binding features such as <code>IValueConverter</code>s, Binding Modes, Resources, and expressive, declarative binding statements.</li>
+
+<li>Suppress Exceptions - As with WPF, databinding errors should not cause your application to throw an Exception (partialy realised, see: &quot;How far along are we?&quot;).</li>
+</ul>
+
+<h3>Solution Overview</h3>
+
+<table class="ArticleTable">
+<thead>
+<tr>
+<th>Project</th>
+
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Framework/Binding</td>
+
+<td>This is the core framework assembly. It contains all the essential non-platform specific framework components.</td>
+</tr>
+
+<tr>
+<td>Framework/ASPBinding</td>
+
+<td>ASP.NET specific framework components.</td>
+</tr>
+
+<tr>
+<td>FrameworkTests</td>
+
+<td>Unit tests.</td>
+</tr>
+
+<tr>
+<td>DomainModel</td>
+
+<td>Business objects used by the examples and demos.</td>
+</tr>
+
+<tr>
+<td>BindingExamples</td>
+
+<td>Example and demo library - this contains a fair number of simple and more advanced examples, and should be considered the main reference for further exploration of this framework.</td>
+</tr>
+
+<tr>
+<td>Barebones</td>
+
+<td>The bare-minimum &quot;hello world&quot; example of using this framework.</td>
+</tr>
+</tbody>
+</table>
 
 <h3>Notes on Reusing WPF Assemblies</h3>
 
