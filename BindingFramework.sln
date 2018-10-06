@@ -1,17 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPBinding", "ASPBinding\ASPBinding.csproj", "{2F82718F-4A13-442F-BBFB-ED9400B322ED}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding", "Binding\Binding.csproj", "{99EB8F36-875E-4CC5-AD58-E13E779C3DDA}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{2B7548A9-5AC8-4B67-AC3C-4296CE9BA4E9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{FEA39F80-CC2F-44F3-841F-6AC89F3D3FDD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barebones", "Barebones\Barebones.csproj", "{DBDC1E33-4C60-45DC-B1C0-7D5D0786FFD0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingExamples", "BindingExamples\BindingExamples.csproj", "{A625A6E8-277E-418B-8071-1B8B378FEB50}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{032702E8-899B-413B-9A40-9D5CCCFA6131}"
 	ProjectSection(SolutionItems) = preProject
@@ -19,12 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPBinding", "ASPBinding\ASPBinding.csproj", "{2F82718F-4A13-442F-BBFB-ED9400B322ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding", "Binding\Binding.csproj", "{99EB8F36-875E-4CC5-AD58-E13E779C3DDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{FEA39F80-CC2F-44F3-841F-6AC89F3D3FDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barebones", "Barebones\Barebones.csproj", "{DBDC1E33-4C60-45DC-B1C0-7D5D0786FFD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingExamples", "BindingExamples\BindingExamples.csproj", "{A625A6E8-277E-418B-8071-1B8B378FEB50}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkTests", "FrameworkTests\FrameworkTests.csproj", "{B4F370CC-849E-40AA-8183-06F0C9DEDAB9}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = BindingFramework.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -61,5 +60,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2F82718F-4A13-442F-BBFB-ED9400B322ED} = {2B7548A9-5AC8-4B67-AC3C-4296CE9BA4E9}
 		{99EB8F36-875E-4CC5-AD58-E13E779C3DDA} = {2B7548A9-5AC8-4B67-AC3C-4296CE9BA4E9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D02BEA96-729A-4EFA-80D4-5B0C8D66535C}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = BindingFramework.vsmdi
 	EndGlobalSection
 EndGlobal
